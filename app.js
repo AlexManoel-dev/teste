@@ -23,6 +23,10 @@ app.get('/login', (req,res) => {
     res.render('views/index.html')
 })
 
+app.get('/cadastro', (req,res) => {
+    res.render('views/cadastro.html')
+})
+
 app.listen(8080, () => {
     console.log('Servidor rodando!')
 })

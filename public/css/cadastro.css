@@ -10,7 +10,7 @@ html{
     left: 50%;
     transform: translate(-50%,-50%);
     width: 350px; 
-    height: 350px;    
+    height: 400px;    
     border: none;
     background-color: rgba(255,255,255);
     box-shadow: 10px 5px 5px black;
@@ -35,30 +35,43 @@ html{
     height: 25px;
 }
 
-#img1{
+#p1{
     position: absolute;
-    top: 95px;
-    left: 40px;
+    top: 83px;
+    left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#img2{
+#p2{
     position: absolute;
-    top: 155px;
-    left: 40px;
+    top: 145px;
+    left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-#email{
+#p3{
+    position: absolute;
+    top: 205px;
+    left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#nome{
     top: 90px;
 }
 
-#senha{
+#cpf{
     top: 150px;
+}
+
+#bairro{
+    top: 210px
 }
 
 button{
     position: absolute;
     left: 115px;
-    bottom: 80px;
+    bottom: 70px;
     background-color: #D53D3D;
     width: 120px;
     height: 30px;
