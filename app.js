@@ -19,7 +19,7 @@ app.get('/', (req,res) => {
     res.status(200).send({ message : 'Deu tudo certo'})
 })
 
-app.get('/teste', (req,res) => {
+app.get('/login', (req,res) => {
     res.render('views/index.html')
 })
 
