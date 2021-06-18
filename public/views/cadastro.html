@@ -5,14 +5,17 @@
     <title>Cadastro</title>
     <link rel="icon" href="../img/iconenode.png">
     <link rel="stylesheet" href="../css/cadastro.css">
+    <script src="/app.js"></script>
 </head>
 <body>
     <div id="centro">    
         <h1 id="titulodiv">Cadastro</h1>
-        <p id="p1">Nome </p> <input type="text" name="" id="nome" class="inputs"><br>
-        <p id="p2">CPF </p> <input type="number" name="" id="cpf" class="inputs"><br>
-        <p id="p3">Bairro </p> <input type="text" name="" id="bairro" class="inputs"><br>
-        <button><b>Cadastrar</b></button>
+        <form action="/cadastrar">
+            <p id="p1">Nome </p> <input type="text" name="" id="nome" class="inputs"><br>
+            <p id="p2">CPF </p> <input type="number" name="" id="cpf" class="inputs"><br>
+            <p id="p3">Bairro </p> <input type="text" name="" id="bairro" class="inputs"><br>
+            <button id="btn-cadastro"><b>Cadastrar</b></button>
+        </form>
     </div>
 </body>
 </html>

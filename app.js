@@ -27,6 +27,10 @@ app.get('/cadastro', (req,res) => {
     res.render('views/cadastro.html')
 })
 
-app.listen(8080, () => {
+app.post('/cadastrar', (req,res)=>{
+    //cadastra e depois redireciona pra home
+})
+
+app.listen(3000, () => {
     console.log('Servidor rodando!')
 })
