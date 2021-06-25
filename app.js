@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 const mysql = require('./mysql').pool
 const app = express()
+const port = 3000
 
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(bodyParser.json())
@@ -31,20 +32,16 @@ app.get('/cadastro', (req,res) => {
 app.post('/cadastrar', (req,res)=>{
     //cadastra e depois redireciona pra home
     const {nome, cpf, bairro} = req.body
-    mysql.getConnection((err, conn) => {
-        if(err) { return res.status(500).send({ error: error })}
+    mysql.getConnection((error, conn) => {
+        if(error) { return res.status(500).send({ error: error })}
         conn.query('insert into usuarios (nome,cpf,bairro) values (?,?,?)', [nome, cpf, bairro], (error, results) => {
             conn.release()
             if(error) { return res.status(500).send({ error: error }) }
         })
     })
-    res.render('views/home.html')
-    response = {
-        message: "Deu certo"
-    }
-    res.status(200).send(response)
+    res.status(201).send({ message: 'Deu certo'})
 })
 
-app.listen(3000, () => {
-    console.log('Servidor rodando!')
+app.listen(port, () => {
+    console.log(`Servidor rodando na porta ${port}`)
 })
