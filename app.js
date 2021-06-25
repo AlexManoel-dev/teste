@@ -39,7 +39,7 @@ app.post('/cadastrar', (req,res)=>{
             if(error) { return res.status(500).send({ error: error }) }
         })
     })
-    res.status(201).send({ message: 'Deu certo'})
+    res.status(201).send({ message: 'Usuário criado com sucesso!'})
 })
 
 app.listen(port, () => {
