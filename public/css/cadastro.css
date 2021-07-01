@@ -56,15 +56,15 @@ html{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#nome{
+#i_email{
     top: 90px;
 }
 
-#cpf{
+#i_nome{
     top: 150px;
 }
 
-#bairro{
+#i_senha{
     top: 210px
 }
 

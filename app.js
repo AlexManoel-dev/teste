@@ -18,11 +18,11 @@ app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
 app.get('/', (req,res) => {
-    res.status(200).send({ message : 'Deu tudo certo'})
+    res.render('views/index.html')
 })
 
 app.get('/login', (req,res) => {
-    res.render('views/index.html')
+    
 })
 
 app.get('/cadastro', (req,res) => {
@@ -31,15 +31,15 @@ app.get('/cadastro', (req,res) => {
 
 app.post('/cadastrar', (req,res)=>{
     //cadastra e depois redireciona pra home
-    const {nome, cpf, bairro} = req.body
+    const {email, nome, senha} = req.body
     mysql.getConnection((error, conn) => {
         if(error) { return res.status(500).send({ error: error })}
-        conn.query('insert into usuarios (nome,cpf,bairro) values (?,?,?)', [nome, cpf, bairro], (error, results) => {
+        conn.query('insert into usuarios (email,nome,senha) values (?,?,?)', [email, nome, senha], (error, results) => {
             conn.release()
             if(error) { return res.status(500).send({ error: error }) }
         })
     })
-    res.status(201).send({ message: 'Usuário criado com sucesso!'})
+    res.status(201).render('views/index.html', { isAdded: true})
 })
 
 app.listen(port, () => {
