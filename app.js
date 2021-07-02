@@ -19,7 +19,7 @@ app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
 app.get('/', (req,res) => {
-    
+    // Deixar a tela inicial aqui, portanto, mude o arquivo de login para login.html, deixa o index.html para a tela inicial
 })
 
 app.get('/cadastro', (req,res) => {
