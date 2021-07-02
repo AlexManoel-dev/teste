@@ -6,12 +6,13 @@
     <link rel="icon" href="../img/iconenode.png">
     <link rel="stylesheet" href="../css/cadastro.css">
     <script src="/app.js"></script>
+    <script src="sweetalert2.all.min.js"></script>
     <!-- <script src="sweetalert2.all.min.js"></script> -->
 </head>
 <body>
     <div id="centro">    
         <h1 id="titulodiv">Cadastro</h1>
-        <form action="/cadastrar" method="POST">
+        <form id="" action="/cadastrar" method="POST">
             <p id="p1">Email </p> <input type="email" name="email" id="i_email" class="inputs" required><br>
             <p id="p2">Nome </p> <input type="text" name="nome" id="i_nome" class="inputs" required><br>
             <p id="p3">Senha </p> <input type="password" name="senha" id="i_senha" class="inputs" required><br>
@@ -25,5 +26,18 @@
 		// $("#data").mask("99/99/9999");
 		// $("#celular").mask("(99) 99999-9999");
 	</script> -->
+    <script>
+        const formulario = document.querySelectorAll('form')
+        function alerta() {
+            Swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            )
+        }    
+        if(formulario.addEventListener){
+            formulario.addEventListener("submit", alerta, false)
+        }
+    </script>
 </body>
 </html>
