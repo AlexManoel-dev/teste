@@ -5,13 +5,16 @@
     <title>Login</title>
     <link rel="icon" href="../img/iconenode.png">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="/app.js"></script>
 </head>
 <body>
     <div id="centro">    
         <h1 id="titulodiv">Login</h1>
-        <img src="../img/usuario.png" alt="erro" class="img" id="img1"><input type="text" name="" id="email" class="inputs"><br>
-        <img src="../img/cadeado.png" alt="erro" class="img" id="img2"><input type="password" name="" id="senha" class="inputs"><br>
-        <button><b>Enviar</b></button>
+        <form action="/logar" method="POST">
+            <img src="../img/usuario.png" alt="erro" class="img" id="img1"><input type="email" name="email" id="i_email" class="inputs" required><br>
+            <img src="../img/cadeado.png" alt="erro" class="img" id="img2"><input type="password" name="senha" id="i_senha" class="inputs" required><br>
+            <button><b>Enviar</b></button>
+        </form>
         <a href="/cadastro">Quero me cadastrar</a>
     </div>
 </body>

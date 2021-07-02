@@ -2,6 +2,7 @@ const path = require('path')
 const bodyParser = require('body-parser')
 const express = require('express')
 const mysql = require('./mysql').pool
+const bcrypt = require('bcrypt')
 const app = express()
 const port = 3000
 
@@ -18,10 +19,6 @@ app.engine("html", require("ejs").renderFile);
 app.set("view engine", "html");
 
 app.get('/', (req,res) => {
-    res.render('views/index.html')
-})
-
-app.get('/login', (req,res) => {
     
 })
 
@@ -29,7 +26,7 @@ app.get('/cadastro', (req,res) => {
     res.render('views/cadastro.html')
 })
 
-app.post('/cadastrar', (req,res)=>{
+app.post('/cadastrar', (req,res,next)=>{
     //cadastra e depois redireciona pra home
     const {email, nome, senha} = req.body
     mysql.getConnection((error, conn) => {
@@ -39,7 +36,16 @@ app.post('/cadastrar', (req,res)=>{
             if(error) { return res.status(500).send({ error: error }) }
         })
     })
-    res.status(201).render('views/index.html', { isAdded: true})
+    res.status(201).render('views/index.html', { isAdded: true}) //o {isAdded: true} vai ser usado de condição quando for usar o sweetAlert2 para confirmação de cadastro
+    next()
+})
+
+app.get('/login', (req,res) => {
+    res.render('views/index.html')
+})
+
+app.post('/logar', (req,res,next) => {
+    
 })
 
 app.listen(port, () => {
