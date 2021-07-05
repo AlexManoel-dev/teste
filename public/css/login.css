@@ -1,0 +1,82 @@
+html{
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, purple, red);
+}
+
+#centro{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px; 
+    height: 350px;    
+    border: none;
+    background-color: rgba(255,255,255);
+    box-shadow: 10px 5px 5px black;
+    border-radius: 13px;
+}
+
+#titulodiv{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputs{
+    position: absolute;
+    left: 90px;
+    outline: 0;
+    border-radius: 5px;
+    height: 30px;
+}
+
+.img{
+    width: 25px;
+    height: 25px;
+}
+
+#img1{
+    position: absolute;
+    top: 95px;
+    left: 40px;
+}
+
+#img2{
+    position: absolute;
+    top: 155px;
+    left: 40px;
+}
+
+#i_email{
+    top: 90px;
+}
+
+#i_senha{
+    top: 150px;
+}
+
+button{
+    position: absolute;
+    left: 115px;
+    bottom: 80px;
+    background-color: #D53D3D;
+    width: 120px;
+    height: 30px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a{
+    position: absolute;
+    bottom: 30px;
+    left: 105px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a:hover{
+    text-decoration: underline;
+}

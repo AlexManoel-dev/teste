@@ -20,6 +20,7 @@ app.set("view engine", "html");
 
 app.get('/', (req,res) => {
     // Deixar a tela inicial aqui, portanto, mude o arquivo de login para login.html, deixa o index.html para a tela inicial
+    res.render('views/index.html')
 })
 
 app.get('/cadastro', (req,res) => {
@@ -41,7 +42,7 @@ app.post('/cadastrar', (req,res,next)=>{
 })
 
 app.get('/login', (req,res) => {
-    res.render('views/index.html')
+    res.render('views/login.html')
 })
 
 app.post('/logar', (req,res,next) => {
